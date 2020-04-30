@@ -4,7 +4,7 @@
   pointer-events: none;
 }
 
-.App-header {
+.container {
   background-color: #232331;
   min-height: 100vh;
   display: flex;
