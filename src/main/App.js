@@ -4,10 +4,8 @@ import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 
 import rootReducer from "./rootReducer";
-import logo from "../utils/imgs/logo.png";
-import "./App.css";
 import { BrowserRouter } from "react-router-dom";
-import Routes from "../routes";
+import Routes from "./routes";
 
 const store = createStore(rootReducer, compose(applyMiddleware(thunk)));
 

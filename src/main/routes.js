@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router";
-import Home from "./pages/home";
-import Categories from "./pages/categories";
+import Home from "../pages/home";
+import Categories from "../pages/categories";
 
 export default () => (
   <Switch>
