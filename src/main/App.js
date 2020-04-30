@@ -1,10 +1,11 @@
 import React from "react";
-import "./App.css";
-import logo from "../utils/imgs/logo.png";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
+
 import rootReducer from "./rootReducer";
+import logo from "../utils/imgs/logo.png";
+import "./App.css";
 
 const store = createStore(rootReducer, compose(applyMiddleware(thunk)));
 
