@@ -6,15 +6,19 @@ import thunk from "redux-thunk";
 import rootReducer from "./rootReducer";
 import logo from "../utils/imgs/logo.png";
 import "./App.css";
+import { BrowserRouter } from "react-router-dom";
+import Routes from "../routes";
 
 const store = createStore(rootReducer, compose(applyMiddleware(thunk)));
 
 function App() {
   return (
     <Provider store={store}>
-      <div className="container">
-        <img src={logo} className="App-logo" alt="logo" />
-      </div>
+      <BrowserRouter>
+        <main>
+          <Routes />
+        </main>
+      </BrowserRouter>
     </Provider>
   );
 }
