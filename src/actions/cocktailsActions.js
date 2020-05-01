@@ -15,7 +15,7 @@ export const set_category = (category) => (dispatch) => {
   dispatch({ type: "SET_CATEGORY", payload: category });
 };
 
-export const listByCategory = (category) => async (dispatch) => {
+export const list_by_category = (category) => async (dispatch) => {
   try {
     const url = `filter.php?c=${category}`;
     const { drinks } = await Api.get(url);
