@@ -35,5 +35,4 @@ export const select_drink = (id) => async (dispatch) => {
   } catch (e) {
     console.log(e);
   }
-  // dispatch({ type: "SELECT_DRINK", payload: id });
 };

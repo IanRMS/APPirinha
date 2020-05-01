@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 import { FaRegArrowAltCircleLeft } from "react-icons/fa";
 import {
   Container,
@@ -12,41 +12,51 @@ import {
   DrinkImage,
 } from "./styles";
 import { blue } from "../../utils/colors";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { select_drink } from "../../actions/cocktailsActions";
 
 function Drink() {
-  const { drink } = useSelector((state) => state.cocktailsReducer);
+  const dispatch = useDispatch();
+  const selectedDrink = useSelector((state) => state.cocktailsReducer.drink);
+  const { category } = useSelector((state) => state.cocktailsReducer);
+  let { drink } = useParams();
+
+  useEffect(() => {
+    dispatch(select_drink(drink));
+  }, [dispatch, drink]);
   return (
     <Container>
-      <Content>
-        <Header>
-          <Link to="/categories/filter-category">
-            <FaRegArrowAltCircleLeft size={30} color={blue} />
-          </Link>
-          <span>{drink.strDrink}</span>
-        </Header>
-        <DrinkContent>
-          <DrinkImage src={drink.strDrinkThumb} alt="thumb" />
-          <Column>
-            <Property>
-              <PropertyTitle>Category:</PropertyTitle>
-              <span>{drink.strCategory}</span>
-            </Property>
-            <Property>
-              <PropertyTitle>Glass:</PropertyTitle>
-              <span>{drink.strGlass}</span>
-            </Property>
-            <Property>
-              <PropertyTitle>Is alcoholic?:</PropertyTitle>
-              <span>{drink.strAlcoholic}</span>
-            </Property>
-            <Property>
-              <PropertyTitle>Instructions:</PropertyTitle>
-              <span>{drink.strInstructions}</span>
-            </Property>
-          </Column>
-        </DrinkContent>
-      </Content>
+      {selectedDrink && (
+        <Content>
+          <Header>
+            <Link to={category ? "/categories/filter-category" : "/categories"}>
+              <FaRegArrowAltCircleLeft size={30} color={blue} />
+            </Link>
+            <span>{selectedDrink.strDrink}</span>
+          </Header>
+          <DrinkContent>
+            <DrinkImage src={selectedDrink.strDrinkThumb} alt="thumb" />
+            <Column>
+              <Property>
+                <PropertyTitle>Category:</PropertyTitle>
+                <span>{selectedDrink.strCategory}</span>
+              </Property>
+              <Property>
+                <PropertyTitle>Glass:</PropertyTitle>
+                <span>{selectedDrink.strGlass}</span>
+              </Property>
+              <Property>
+                <PropertyTitle>Is alcoholic?:</PropertyTitle>
+                <span>{selectedDrink.strAlcoholic}</span>
+              </Property>
+              <Property>
+                <PropertyTitle>Instructions:</PropertyTitle>
+                <span>{selectedDrink.strInstructions}</span>
+              </Property>
+            </Column>
+          </DrinkContent>
+        </Content>
+      )}
     </Container>
   );
 }

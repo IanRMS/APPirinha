@@ -74,6 +74,8 @@ export const PropertyTitle = styled.span`
 
 export const DrinkImage = styled.img`
   width: 100%;
-  height: auto;
+  height: 100%;
+  max-height: 520px;
+  object-fit: cover;
   border-radius: 4px;
 `;

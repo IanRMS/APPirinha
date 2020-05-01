@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-import { list_by_category, select_drink } from "../../actions/cocktailsActions";
+import { list_by_category } from "../../actions/cocktailsActions";
 import { Container, Content, Header, Item, ItemImage, List } from "./styles";
 import { FaRegArrowAltCircleLeft } from "react-icons/fa";
 import { lemon } from "../../utils/colors";
@@ -20,7 +20,7 @@ function CategoryItens() {
     <Container>
       <Content>
         <Header>
-          <Link to="/categories">
+          <Link to={"/categories"}>
             <FaRegArrowAltCircleLeft size={30} color={lemon} />
           </Link>
           <span>{category}</span>
@@ -31,8 +31,7 @@ function CategoryItens() {
               <Item key={item.idDrink}>
                 <Link
                   style={{ display: "flex", alignItems: "center" }}
-                  to="/categories/filter-category/drink"
-                  onClick={() => dispatch(select_drink(item.idDrink))}
+                  to={`/categories/filter-category/${item.idDrink}`}
                 >
                   <ItemImage src={item.strDrinkThumb} />
                   <span>{item.strDrink}</span>

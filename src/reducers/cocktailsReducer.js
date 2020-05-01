@@ -1,6 +1,6 @@
 const initial_state = {
   categories: [],
-  category: "",
+  category: null,
   listByCategory: [],
   idDrink: "",
   drink: {},
@@ -15,8 +15,6 @@ export default (state = initial_state, action) => {
       return { ...state, category: payload };
     case "LIST_BY_CATEGORY":
       return { ...state, listByCategory: payload };
-    case "LIST_DRINK":
-      return { ...state, drink: payload };
     case "SELECT_DRINK":
       return { ...state, drink: payload };
     default:
