@@ -7,6 +7,7 @@ export const Container = styled.div`
   flex-direction: row;
   width: 100vw;
   height: 100vh;
+  margin: 0 auto;
   background: ${background};
 `;
 
@@ -44,7 +45,6 @@ export const Options = styled.div`
   display: flex;
   flex-direction: column;
   width: 50%;
-  height: 100vh;
   justify-content: center;
   align-items: center;
   background-color: ${background};
@@ -60,7 +60,7 @@ export const Logo = styled.img`
   max-width: 460px;
 `;
 
-export const Option = styled.div`
+export const Option = styled.button`
   margin: 15px 0px;
   width: 98%;
   max-width: ${(props) => (props.mobile ? 320 : 400)}px;
@@ -75,13 +75,18 @@ export const Option = styled.div`
   padding: 10px;
   border-radius: 2px;
   transition: 0.3s;
+  justify-content: space-between;
+  outline: none;
+  border: none;
 
   span {
     color: ${white};
     font-size: calc(100% + 0.6vw);
+    font-family: "Dosis";
   }
   :hover {
     transform: scale(1.1);
+    cursor: pointer;
   }
 `;
 

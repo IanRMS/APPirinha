@@ -6,7 +6,7 @@ import Categories from "../pages/categories";
 export default () => (
   <Switch>
     <Route exact path="/" component={Home} />
-    <Route path="categories" component={Categories} />
+    <Route path="/categories" component={Categories} />
     <Redirect from="*" to="/" />
   </Switch>
 );
