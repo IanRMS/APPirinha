@@ -6,10 +6,12 @@ import CategoryItens from "../pages/categoryItems";
 import Drink from "../pages/drink";
 import Search from "../pages/search";
 import NavOptions from "../components/navOptions";
+import TabOptions from "../components/tabOptions";
 
 export default () => (
   <>
     <NavOptions />
+    <TabOptions />
     <Switch>
       <Route exact path="/" component={Home} />
       <Route path="/categories" exact component={Categories} />
