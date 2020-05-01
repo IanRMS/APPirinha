@@ -23,17 +23,6 @@ export const Content = styled.section`
   padding: 10px;
   margin-top: 40px;
 `;
-export const BackButton = styled.button`
-  cursor: pointer;
-  border: none;
-  outline: none;
-  background: none;
-  transition: 0.3s;
-
-  :hover {
-    transform: scale(1.1);
-  }
-`;
 
 export const Header = styled.div`
   width: 100%;

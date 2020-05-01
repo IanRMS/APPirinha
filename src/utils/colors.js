@@ -4,3 +4,4 @@ export const lemon = "#c3f517";
 export const white = "#fafafa";
 export const darkPurple = "#3a2744";
 export const pink = "#d61c78";
+export const blue = "#25a9ed";

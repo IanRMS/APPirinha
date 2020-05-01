@@ -25,3 +25,15 @@ export const list_by_category = (category) => async (dispatch) => {
     console.log(e);
   }
 };
+
+export const select_drink = (id) => async (dispatch) => {
+  try {
+    const url = `lookup.php?i=${id}`;
+    const { drinks } = await Api.get(url);
+    console.log(drinks[0]);
+    dispatch({ type: "SELECT_DRINK", payload: drinks[0] });
+  } catch (e) {
+    console.log(e);
+  }
+  // dispatch({ type: "SELECT_DRINK", payload: id });
+};

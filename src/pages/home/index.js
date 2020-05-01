@@ -23,9 +23,9 @@ function Home() {
           <Logo src={logo} alt="logo" />
           <DescContainer>
             <Desc>
-              Appirinha é o principal portal de Coquetéis. <br></br> Pesquise
-              pelo nome, categoria ou clique em ver um aleatório para conhecer
-              um novo coquetel.
+              Appirinha é o principal portal de Drinks. <br></br> Pesquise pelo
+              nome, categoria ou clique em ver um aleatório para conhecer um
+              novo coquetel.
             </Desc>
           </DescContainer>
           <OptionsMobile>
