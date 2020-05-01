@@ -1,5 +1,6 @@
 import Api from "../services/api";
 
+//LISTAR CATEGORIAS
 export const get_categories = () => async (dispatch) => {
   try {
     const url = "list.php?c=list";
@@ -11,10 +12,12 @@ export const get_categories = () => async (dispatch) => {
   }
 };
 
+//SELECIONAR CATEGORIAS
 export const set_category = (category) => (dispatch) => {
   dispatch({ type: "SET_CATEGORY", payload: category });
 };
 
+//FILTRAR LISTA POR CATEGORIA
 export const list_by_category = (category) => async (dispatch) => {
   try {
     const url = `filter.php?c=${category}`;
@@ -26,6 +29,7 @@ export const list_by_category = (category) => async (dispatch) => {
   }
 };
 
+//SELECIONAR DRINK
 export const select_drink = (id) => async (dispatch) => {
   try {
     const url = `lookup.php?i=${id}`;
@@ -37,6 +41,7 @@ export const select_drink = (id) => async (dispatch) => {
   }
 };
 
+//BUSCAR DRINK PELO NOME
 export const search_drink = (search) => async (dispatch) => {
   try {
     const url = `search.php?s=${search}`;
@@ -48,6 +53,7 @@ export const search_drink = (search) => async (dispatch) => {
   }
 };
 
+//BUSCAR DRINK ALEATÓRIO
 export const random_drink = () => async (dispatch) => {
   try {
     const url = "random.php";

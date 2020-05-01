@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { FaRegArrowAltCircleLeft, FaRegFrown } from "react-icons/fa";
@@ -20,10 +20,6 @@ function Search() {
   const [search, setSearch] = useState("");
   const { searchList } = useSelector((state) => state.cocktailsReducer);
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    console.log(searchList);
-  }, [searchList]);
 
   function searchDrink(e) {
     e.preventDefault();

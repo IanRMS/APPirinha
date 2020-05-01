@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 import { list_by_category } from "../../actions/cocktailsActions";
 import { Container, Content, Header, Item, ItemImage, List } from "./styles";
@@ -9,9 +9,16 @@ import { lemon } from "../../utils/colors";
 
 function CategoryItens() {
   const dispatch = useDispatch();
+  const history = useHistory();
   const { category, listByCategory } = useSelector(
     (state) => state.cocktailsReducer
   );
+
+  useEffect(() => {
+    if (!category) {
+      history.push("/categories");
+    }
+  }, [category, history]);
 
   useEffect(() => {
     dispatch(list_by_category(category));

@@ -52,7 +52,7 @@ function Home() {
               <span>Pesquisar pelo nome</span>
               <FaSearch size={24} color={white} />
             </Option>
-            <Option mobile={true}>
+            <Option mobile={true} onClick={() => handle_random()}>
               <span>Conhecer um aleatório</span>
               <FaGlassMartiniAlt size={24} color={white} />
             </Option>
