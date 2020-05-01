@@ -5,7 +5,7 @@ import {
   lemon,
   clearBackground,
   white,
-  pink,
+  gray,
 } from "../../utils/colors";
 
 export const Container = styled.div`
@@ -53,7 +53,7 @@ export const Form = styled.form`
   input {
     width: 100%;
     max-width: 400px;
-    height: 60px;
+    height: 52px;
     color: #333;
     border: 1px solid #dcdce6;
     border-radius: 10px 0px 0px 10px;
@@ -65,7 +65,7 @@ export const Form = styled.form`
   }
 
   button {
-    height: 60px;
+    height: 52px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,7 +73,7 @@ export const Form = styled.form`
     border-radius: 0px 10px 10px 0px;
     border: none;
     outline: none;
-    background: ${lemon};
+    background: ${yellow};
     margin-left: 5px;
     font-size: 22px;
     font-weight: 700;
@@ -82,7 +82,7 @@ export const Form = styled.form`
 
     :hover {
       transform: scale(1.02);
-      background: ${yellow};
+      background: ${lemon};
     }
   }
 `;
@@ -147,8 +147,8 @@ export const NotFound = styled.div`
   margin-top: 20px;
 
   span {
-    font-size: calc(100% + 1.7vw);
-    color: ${pink};
+    font-size: calc(100% + 1.6vw);
+    color: ${gray};
     margin-top: 5px;
     font-weight: 700;
   }

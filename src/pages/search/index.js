@@ -13,7 +13,7 @@ import {
   ItemImage,
   NotFound,
 } from "./styles";
-import { yellow, pink } from "../../utils/colors";
+import { yellow, gray } from "../../utils/colors";
 import { search_drink } from "../../actions/cocktailsActions";
 
 function Search() {
@@ -65,7 +65,7 @@ function Search() {
         )}
         {!searchList && (
           <NotFound>
-            <FaRegFrown size={190} color={pink} />
+            <FaRegFrown size={190} color={gray} />
             <span>Nothing was found from you search</span>
           </NotFound>
         )}
