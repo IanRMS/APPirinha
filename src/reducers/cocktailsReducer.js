@@ -5,6 +5,7 @@ const initial_state = {
   idDrink: "",
   drink: {},
   searchList: [],
+  randomId: null,
 };
 
 export default (state = initial_state, action) => {
@@ -20,6 +21,8 @@ export default (state = initial_state, action) => {
       return { ...state, drink: payload };
     case "SEARCH_DRINKS":
       return { ...state, searchList: payload };
+    case "HANDLE_RANDOM":
+      return { ...state, randomId: payload };
     default:
       return state;
   }

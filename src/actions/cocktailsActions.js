@@ -47,3 +47,14 @@ export const search_drink = (search) => async (dispatch) => {
     console.log(e);
   }
 };
+
+export const random_drink = () => async (dispatch) => {
+  try {
+    const url = "random.php";
+    const { drinks } = await Api.get(url);
+    console.log(drinks[0].idDrink);
+    dispatch({ type: "HANDLE_RANDOM", payload: drinks[0].idDrink });
+  } catch (e) {
+    console.log(e);
+  }
+};

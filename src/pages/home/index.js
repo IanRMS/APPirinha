@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaSearch, FaFilter, FaGlassMartiniAlt } from "react-icons/fa";
 import { useHistory } from "react-router";
 import {
@@ -13,9 +13,24 @@ import {
 } from "./styles";
 import logo from "../../utils/imgs/logo.png";
 import { white } from "../../utils/colors";
+import { useDispatch, useSelector } from "react-redux";
+import { random_drink } from "../../actions/cocktailsActions";
 
 function Home() {
+  const [selected, setSelected] = useState(false);
+  const dispatch = useDispatch();
   const history = useHistory();
+  const { randomId } = useSelector((state) => state.cocktailsReducer);
+
+  function handle_random() {
+    setSelected(true);
+    dispatch(random_drink());
+  }
+
+  useEffect(() => {
+    if (randomId && selected) history.push(`/drink/${randomId}`);
+  }, [randomId, history, selected]);
+
   return (
     <div>
       <Container>
@@ -38,7 +53,7 @@ function Home() {
               <FaSearch size={24} color={white} />
             </Option>
             <Option mobile={true}>
-              <span>Conhecer um novo</span>
+              <span>Conhecer um aleatório</span>
               <FaGlassMartiniAlt size={24} color={white} />
             </Option>
           </OptionsMobile>
@@ -52,8 +67,8 @@ function Home() {
             <span>Pesquisar pelo nome</span>
             <FaSearch size={24} color={white} />
           </Option>
-          <Option>
-            <span>Conhecer um novo</span>
+          <Option onClick={() => handle_random()}>
+            <span>Conhecer um aleatório</span>
             <FaGlassMartiniAlt size={24} color={white} />
           </Option>
         </Options>
