@@ -28,7 +28,7 @@ export const Content = styled.section`
   flex-wrap: wrap;
   justify-content: center;
   padding: 10px;
-  margin-top: 80px;
+  margin-top: 60px;
 `;
 
 export const Header = styled.div`

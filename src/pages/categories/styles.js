@@ -10,10 +10,10 @@ export const Container = styled.div`
   background-color: ${background};
   justify-content: center;
   align-items: flex-start;
-  padding-top: 80px;
 `;
 
 export const Header = styled.div`
+  margin-top: 40px;
   width: 90%;
   border-bottom: 1px solid ${pink};
   padding: 8px 0px;

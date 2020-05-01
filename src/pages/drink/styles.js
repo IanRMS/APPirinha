@@ -9,7 +9,6 @@ export const Container = styled.div`
   margin: 0 auto;
   background-color: ${background};
   justify-content: center;
-  padding-top: 20px;
   overflow-x: hidden;
 `;
 
@@ -30,7 +29,7 @@ export const Header = styled.div`
   border-bottom: 1px solid ${blue};
   padding: 8px 0px;
   display: flex;
-  align: center;
+  align-items: center;
 
   span {
     font-size: calc(100% + 1.3vw);

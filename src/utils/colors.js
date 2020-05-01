@@ -7,3 +7,4 @@ export const pink = "#d61c78";
 export const blue = "#25a9ed";
 export const yellow = "#fcd53b";
 export const gray = "#e0e0e0";
+export const black = "#424242";
