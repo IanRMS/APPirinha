@@ -12,6 +12,19 @@ export const Container = styled.div`
   align-items: center;
 `;
 
+export const Header = styled.div`
+  width: 100%;
+  border-bottom: 1px solid ${pink};
+  padding: 8px 0px;
+  margin-bottom: 10px;
+
+  span {
+    font-size: calc(100% + 1.3vw);
+    color: ${pink};
+    margin-left: 10px;
+  }
+`;
+
 export const Category = styled.button`
   outline: none;
   border: none;
