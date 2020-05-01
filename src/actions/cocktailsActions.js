@@ -36,3 +36,14 @@ export const select_drink = (id) => async (dispatch) => {
     console.log(e);
   }
 };
+
+export const search_drink = (search) => async (dispatch) => {
+  try {
+    const url = `search.php?s=${search}`;
+    const { drinks } = await Api.get(url);
+    console.log(drinks);
+    dispatch({ type: "SEARCH_DRINKS", payload: drinks });
+  } catch (e) {
+    console.log(e);
+  }
+};

@@ -29,6 +29,8 @@ export const Header = styled.div`
   width: 100%;
   border-bottom: 1px solid ${blue};
   padding: 8px 0px;
+  display: flex;
+  align: center;
 
   span {
     font-size: calc(100% + 1.3vw);
@@ -78,4 +80,19 @@ export const DrinkImage = styled.img`
   max-height: 520px;
   object-fit: cover;
   border-radius: 4px;
+`;
+
+export const BackButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  background: none;
+  border: none;
+  transition: 0.3s;
+  cursor: pointer;
+
+  :hover {
+    transform: scale(1.02);
+  }
 `;

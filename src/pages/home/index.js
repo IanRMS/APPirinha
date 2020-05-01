@@ -33,7 +33,7 @@ function Home() {
               <span>Categorias</span>
               <FaFilter size={24} color={white} />
             </Option>
-            <Option mobile={true}>
+            <Option mobile={true} onClick={() => history.push("/search")}>
               <span>Pesquisar pelo nome</span>
               <FaSearch size={24} color={white} />
             </Option>
@@ -48,7 +48,7 @@ function Home() {
             <span>Categorias</span>
             <FaFilter size={24} color={white} />
           </Option>
-          <Option>
+          <Option onClick={() => history.push("/search")}>
             <span>Pesquisar pelo nome</span>
             <FaSearch size={24} color={white} />
           </Option>

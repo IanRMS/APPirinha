@@ -4,6 +4,7 @@ const initial_state = {
   listByCategory: [],
   idDrink: "",
   drink: {},
+  searchList: [],
 };
 
 export default (state = initial_state, action) => {
@@ -17,6 +18,8 @@ export default (state = initial_state, action) => {
       return { ...state, listByCategory: payload };
     case "SELECT_DRINK":
       return { ...state, drink: payload };
+    case "SEARCH_DRINKS":
+      return { ...state, searchList: payload };
     default:
       return state;
   }

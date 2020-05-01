@@ -11,7 +11,7 @@ export default () => (
     <Route exact path="/" component={Home} />
     <Route path="/categories" exact component={Categories} />
     <Route path="/categories/filter-category" exact component={CategoryItens} />
-    <Route path="/:drink" component={Drink} />
+    <Route path="/drink/:drink" component={Drink} />
     <Route path="/search" component={Search} />
     <Redirect from="*" to="/" />
   </Switch>
