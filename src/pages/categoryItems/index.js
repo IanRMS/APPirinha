@@ -31,7 +31,7 @@ function CategoryItens() {
               <Item key={item.idDrink}>
                 <Link
                   style={{ display: "flex", alignItems: "center" }}
-                  to={`/categories/filter-category/${item.idDrink}`}
+                  to={`/${item.idDrink}`}
                 >
                   <ItemImage src={item.strDrinkThumb} />
                   <span>{item.strDrink}</span>

@@ -9,11 +9,12 @@ export const Container = styled.div`
   margin: 0 auto;
   background-color: ${background};
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  padding-top: 80px;
 `;
 
 export const Header = styled.div`
-  width: 100%;
+  width: 90%;
   border-bottom: 1px solid ${pink};
   padding: 8px 0px;
   margin-bottom: 10px;

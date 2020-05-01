@@ -47,7 +47,7 @@ export const Options = styled.div`
   width: 50%;
   justify-content: center;
   align-items: center;
-  background-color: ${background};
+  background-color: ${clearBackground};
   padding: 10px;
 
   @media (max-width: 768px) {
@@ -64,7 +64,7 @@ export const Option = styled.button`
   margin: 15px 0px;
   width: 98%;
   max-width: ${(props) => (props.mobile ? 320 : 400)}px;
-  height: 56px;
+  height: 66px;
   background-color: ${clearBackground};
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
     0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
