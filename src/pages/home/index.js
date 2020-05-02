@@ -45,30 +45,30 @@ function Home() {
           </DescContainer>
           <OptionsMobile>
             <Option mobile={true} onClick={() => history.push("/categories")}>
-              <span>Categorias</span>
+              <span>Categories</span>
               <FaFilter size={24} color={white} />
             </Option>
             <Option mobile={true} onClick={() => history.push("/search")}>
-              <span>Pesquisar pelo nome</span>
+              <span>Search by the name</span>
               <FaSearch size={24} color={white} />
             </Option>
             <Option mobile={true} onClick={() => handle_random()}>
-              <span>Conhecer um aleatório</span>
+              <span>Pick a random drink</span>
               <FaGlassMartiniAlt size={24} color={white} />
             </Option>
           </OptionsMobile>
         </Section>
         <Options>
           <Option onClick={() => history.push("/categories")}>
-            <span>Categorias</span>
+            <span>Categories</span>
             <FaFilter size={24} color={white} />
           </Option>
           <Option onClick={() => history.push("/search")}>
-            <span>Pesquisar pelo nome</span>
+            <span>Search by the name</span>
             <FaSearch size={24} color={white} />
           </Option>
           <Option onClick={() => handle_random()}>
-            <span>Conhecer um aleatório</span>
+            <span>Pick a random drink</span>
             <FaGlassMartiniAlt size={24} color={white} />
           </Option>
         </Options>
