@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { background, lemon, white, clearBackground } from "../../utils/colors";
+import { background, white, clearBackground } from "../../utils/colors";
 import backgroundImage from "../../utils/imgs/background.jpg";
 
 export const Container = styled.div`
@@ -19,7 +19,6 @@ export const Section = styled.div`
   background-image: url(${backgroundImage});
   justify-content: center;
   align-items: center;
-  /* border-right: 2px solid ${lemon}; */
 
   @media (max-width: 768px) {
     width: 100%;
