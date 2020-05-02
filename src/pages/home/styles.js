@@ -38,7 +38,7 @@ export const DescContainer = styled.div`
 export const Desc = styled.span`
   font-weight: "bold";
   color: ${white};
-  font-size: calc(100% + 1vw);
+  font-size: calc(100% + 0.8vw);
 `;
 
 export const Options = styled.div`

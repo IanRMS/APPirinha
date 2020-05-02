@@ -25,7 +25,6 @@ export const list_by_category = (category) => async (dispatch) => {
     dispatch({ type: "LIST_BY_CATEGORY", payload: drinks });
   } catch (e) {
     toast.error("Não foi possível listar os drinks");
-    console.log(e);
   }
 };
 
