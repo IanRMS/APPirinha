@@ -22,6 +22,10 @@ export const Content = styled.section`
   justify-content: center;
   padding: 20px;
   margin-top: 40px;
+
+  @media (max-width: 425px) {
+    padding-bottom: 75px;
+  }
 `;
 
 export const Header = styled.div`

@@ -72,4 +72,8 @@ export const Content = styled.section`
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
+
+  @media (max-width: 425px) {
+    padding-bottom: 70px;
+  }
 `;
