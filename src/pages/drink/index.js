@@ -50,7 +50,7 @@ function Drink() {
                 <PropertyTitle>Type:</PropertyTitle>
                 <span>{selectedDrink.strAlcoholic}</span>
               </Property>
-              <Property>
+              <Property style={{ flexDirection: "column" }}>
                 <PropertyTitle>Instructions:</PropertyTitle>
                 <span>{selectedDrink.strInstructions}</span>
               </Property>
