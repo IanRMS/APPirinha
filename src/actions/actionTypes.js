@@ -1,0 +1,6 @@
+export const LIST_CATEGORIES = "LIST_CATEGORIES";
+export const SET_CATEGORY = "SET_CATEGORY";
+export const LIST_BY_CATEGORY = "LIST_BY_CATEGORY";
+export const SELECT_DRINK = "SELECT_DRINK";
+export const HANDLE_RANDOM = "HANDLE_RANDOM";
+export const SEARCH_DRINKS = "SEARCH_DRINKS";
