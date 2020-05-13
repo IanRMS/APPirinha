@@ -35,8 +35,22 @@ export const NavOption = styled.button`
   margin: 10px 0px;
   width: 48px;
   height: 48px;
+  position: relative;
+
+  > span {
+    position: absolute;
+    font-size: 17px;
+    left: 54px;
+    color: #fafafa;
+    opacity: 0;
+    overflow: hidden;
+    transition: 180ms ease-in-out;
+  }
 
   :hover {
     transform: scale(1.1);
+    > span {
+      opacity: 1;
+    }
   }
 `;
