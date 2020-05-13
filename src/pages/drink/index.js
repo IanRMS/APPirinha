@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { FaRegArrowAltCircleLeft } from "react-icons/fa";
+import { useSelector, useDispatch } from "react-redux";
+
 import {
   Container,
   Content,
@@ -14,7 +16,6 @@ import {
   IngredientsWrapper,
 } from "./styles";
 import { blue } from "../../utils/colors";
-import { useSelector, useDispatch } from "react-redux";
 import { select_drink } from "../../actions/cocktailsActions";
 import Loading from "../../components/loading";
 import * as types from "../../actions/actionTypes";

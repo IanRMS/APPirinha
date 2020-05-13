@@ -64,7 +64,7 @@ export const Column = styled.div`
 export const Property = styled.div`
   display: flex;
   flex-direction: row;
-  margin-top: 10px;
+  margin: 8px 0px;
 
   span {
     font-size: 22px;
