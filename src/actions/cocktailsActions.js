@@ -42,6 +42,7 @@ export const select_drink = (id) => async (dispatch) => {
     const url = `lookup.php?i=${id}`;
     const { drinks } = await Api.get(url);
     dispatch({ type: types.SELECT_DRINK, payload: drinks[0] });
+    toast.success("Drink gerado");
   } catch (e) {
     toast.error("Não foi possível detalhar o drink.");
   } finally {

@@ -7,6 +7,7 @@ import { Container, Content, Header, Item, ItemImage, List } from "./styles";
 import { FaRegArrowAltCircleLeft } from "react-icons/fa";
 import { lemon } from "../../utils/colors";
 import Loading from "../../components/loading";
+import * as types from "../../actions/actionTypes";
 
 function CategoryItens() {
   const dispatch = useDispatch();
@@ -31,7 +32,12 @@ function CategoryItens() {
       ) : (
         <Content>
           <Header>
-            <Link to={"/categories"}>
+            <Link
+              to={"/categories"}
+              onClick={() =>
+                dispatch({ type: types.LIST_BY_CATEGORY, payload: [] })
+              }
+            >
               <FaRegArrowAltCircleLeft size={30} color={lemon} />
             </Link>
             <span>{category}</span>
