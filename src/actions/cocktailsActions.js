@@ -6,8 +6,8 @@ import * as types from "./actionTypes";
 export const get_categories = () => async (dispatch) => {
   dispatch(loading(true));
   try {
-    const url = "list.php?c=list";
-    const { drinks } = await Api.get(url);
+    const url = "list.php";
+    const { drinks } = await Api.get(url, { params: { c: "list" } });
     dispatch({ type: types.LIST_CATEGORIES, payload: drinks });
   } catch (e) {
     toast.error("Não foi possível listar as categorias.");
@@ -25,8 +25,8 @@ export const set_category = (category) => (dispatch) => {
 export const list_by_category = (category) => async (dispatch) => {
   dispatch(loading(true));
   try {
-    const url = `filter.php?c=${category}`;
-    const { drinks } = await Api.get(url);
+    const url = `filter.php`;
+    const { drinks } = await Api.get(url, { params: { c: category } });
     dispatch({ type: types.LIST_BY_CATEGORY, payload: drinks });
   } catch (e) {
     toast.error("Não foi possível listar os drinks");
@@ -39,10 +39,10 @@ export const list_by_category = (category) => async (dispatch) => {
 export const select_drink = (id) => async (dispatch) => {
   dispatch(loading(true));
   try {
-    const url = `lookup.php?i=${id}`;
-    const { drinks } = await Api.get(url);
+    const url = `lookup.php`;
+    const { drinks } = await Api.get(url, { params: { i: id } });
     dispatch({ type: types.SELECT_DRINK, payload: drinks[0] });
-    toast.success("Drink gerado");
+    // toast.success("Drink gerado");
   } catch (e) {
     toast.error("Não foi possível detalhar o drink.");
   } finally {
@@ -54,8 +54,8 @@ export const select_drink = (id) => async (dispatch) => {
 export const search_drink = (search) => async (dispatch) => {
   dispatch(loading(true));
   try {
-    const url = `search.php?s=${search}`;
-    const { drinks } = await Api.get(url);
+    const url = `search.php`;
+    const { drinks } = await Api.get(url, { params: { s: search } });
     dispatch({ type: types.SEARCH_DRINKS, payload: drinks });
   } catch (e) {
     toast.error("Não foi possível realizar a busca");
