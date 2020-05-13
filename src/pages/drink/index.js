@@ -29,37 +29,42 @@ function Drink() {
   }, [dispatch, drink]);
   return (
     <Container>
-      {loading && <Loading message="Loading drink..." />}
-      {selectedDrink && (
-        <Content>
-          <Header>
-            <BackButton onClick={() => history.goBack()}>
-              <FaRegArrowAltCircleLeft size={30} color={blue} />
-            </BackButton>
-            <span>{selectedDrink.strDrink}</span>
-          </Header>
-          <DrinkContent>
-            <DrinkImage src={selectedDrink.strDrinkThumb} alt="thumb" />
-            <Column>
-              <Property>
-                <PropertyTitle>Category:</PropertyTitle>
-                <span>{selectedDrink.strCategory}</span>
-              </Property>
-              <Property>
-                <PropertyTitle>Glass:</PropertyTitle>
-                <span>{selectedDrink.strGlass}</span>
-              </Property>
-              <Property>
-                <PropertyTitle>Type:</PropertyTitle>
-                <span>{selectedDrink.strAlcoholic}</span>
-              </Property>
-              <Property style={{ flexDirection: "column" }}>
-                <PropertyTitle>Instructions:</PropertyTitle>
-                <span>{selectedDrink.strInstructions}</span>
-              </Property>
-            </Column>
-          </DrinkContent>
-        </Content>
+      {loading ? (
+        <Loading message="Loading drink..." />
+      ) : (
+        <>
+          {selectedDrink && (
+            <Content>
+              <Header>
+                <BackButton onClick={() => history.goBack()}>
+                  <FaRegArrowAltCircleLeft size={30} color={blue} />
+                </BackButton>
+                <span>{selectedDrink.strDrink}</span>
+              </Header>
+              <DrinkContent>
+                <DrinkImage src={selectedDrink.strDrinkThumb} alt="thumb" />
+                <Column>
+                  <Property>
+                    <PropertyTitle>Category:</PropertyTitle>
+                    <span>{selectedDrink.strCategory}</span>
+                  </Property>
+                  <Property>
+                    <PropertyTitle>Glass:</PropertyTitle>
+                    <span>{selectedDrink.strGlass}</span>
+                  </Property>
+                  <Property>
+                    <PropertyTitle>Type:</PropertyTitle>
+                    <span>{selectedDrink.strAlcoholic}</span>
+                  </Property>
+                  <Property style={{ flexDirection: "column" }}>
+                    <PropertyTitle>Instructions:</PropertyTitle>
+                    <span>{selectedDrink.strInstructions}</span>
+                  </Property>
+                </Column>
+              </DrinkContent>
+            </Content>
+          )}
+        </>
       )}
     </Container>
   );

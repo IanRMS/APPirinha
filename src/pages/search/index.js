@@ -30,46 +30,49 @@ function Search() {
   }
   return (
     <Container>
-      {loading && <Loading message="Loading categories" />}
-      <Content>
-        <Header>
-          <Link to={"/"}>
-            <FaRegArrowAltCircleLeft size={30} color={yellow} />
-          </Link>
-          <span>Search by the name</span>
-        </Header>
-        <Form onSubmit={searchDrink}>
-          <input
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            placeholder="Type the drink's name"
-          />
-          <button disabled={search === "" ? true : false} type="submit">
-            Search
-          </button>
-        </Form>
-        {searchList && (
-          <List>
-            {searchList.map((item) => (
-              <Item key={item.idDrink}>
-                <Link
-                  style={{ display: "flex", alignItems: "center" }}
-                  to={`/drink/${item.idDrink}`}
-                >
-                  <ItemImage src={item.strDrinkThumb} />
-                  <span>{item.strDrink}</span>
-                </Link>
-              </Item>
-            ))}
-          </List>
-        )}
-        {!searchList && (
-          <NotFound>
-            <FaRegFrown size={190} color={gray} />
-            <span>Nothing was found from you search</span>
-          </NotFound>
-        )}
-      </Content>
+      {loading ? (
+        <Loading message="Loading categories" />
+      ) : (
+        <Content>
+          <Header>
+            <Link to={"/"}>
+              <FaRegArrowAltCircleLeft size={30} color={yellow} />
+            </Link>
+            <span>Search by the name</span>
+          </Header>
+          <Form onSubmit={searchDrink}>
+            <input
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="Type the drink's name"
+            />
+            <button disabled={search === "" ? true : false} type="submit">
+              Search
+            </button>
+          </Form>
+          {searchList && (
+            <List>
+              {searchList.map((item) => (
+                <Item key={item.idDrink}>
+                  <Link
+                    style={{ display: "flex", alignItems: "center" }}
+                    to={`/drink/${item.idDrink}`}
+                  >
+                    <ItemImage src={item.strDrinkThumb} />
+                    <span>{item.strDrink}</span>
+                  </Link>
+                </Item>
+              ))}
+            </List>
+          )}
+          {!searchList && (
+            <NotFound>
+              <FaRegFrown size={190} color={gray} />
+              <span>Nothing was found from you search</span>
+            </NotFound>
+          )}
+        </Content>
+      )}
     </Container>
   );
 }

@@ -18,23 +18,26 @@ function Categories() {
   }, [dispatch]);
   return (
     <Container>
-      {loading && <Loading message="Loading categories" />}
-      <Content>
-        <Header>
-          <Link to={"/"}>
-            <FaRegArrowAltCircleLeft size={30} color={pink} />
-          </Link>
-          <span>Categories</span>
-        </Header>
-        {categories.map((item, i) => (
-          <CategoryOption
-            action={() => dispatch(set_category(item.strCategory))}
-            key={i}
-            title={item.strCategory}
-            nav="/categories/filter-category"
-          />
-        ))}
-      </Content>
+      {loading ? (
+        <Loading message="Loading categories" />
+      ) : (
+        <Content>
+          <Header>
+            <Link to={"/"}>
+              <FaRegArrowAltCircleLeft size={30} color={pink} />
+            </Link>
+            <span>Categories</span>
+          </Header>
+          {categories.map((item, i) => (
+            <CategoryOption
+              action={() => dispatch(set_category(item.strCategory))}
+              key={i}
+              title={item.strCategory}
+              nav="/categories/filter-category"
+            />
+          ))}
+        </Content>
+      )}
     </Container>
   );
 }

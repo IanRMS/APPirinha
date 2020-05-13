@@ -26,29 +26,32 @@ function CategoryItens() {
   }, [dispatch, category]);
   return (
     <Container>
-      {loading && <Loading message="Loading drinks..." />}
-      <Content>
-        <Header>
-          <Link to={"/categories"}>
-            <FaRegArrowAltCircleLeft size={30} color={lemon} />
-          </Link>
-          <span>{category}</span>
-        </Header>
-        <List>
-          {listByCategory &&
-            listByCategory.map((item) => (
-              <Item key={item.idDrink}>
-                <Link
-                  style={{ display: "flex", alignItems: "center" }}
-                  to={`/drink/${item.idDrink}`}
-                >
-                  <ItemImage src={item.strDrinkThumb} />
-                  <span>{item.strDrink}</span>
-                </Link>
-              </Item>
-            ))}
-        </List>
-      </Content>
+      {loading ? (
+        <Loading message="Loading drinks..." />
+      ) : (
+        <Content>
+          <Header>
+            <Link to={"/categories"}>
+              <FaRegArrowAltCircleLeft size={30} color={lemon} />
+            </Link>
+            <span>{category}</span>
+          </Header>
+          <List>
+            {listByCategory &&
+              listByCategory.map((item) => (
+                <Item key={item.idDrink}>
+                  <Link
+                    style={{ display: "flex", alignItems: "center" }}
+                    to={`/drink/${item.idDrink}`}
+                  >
+                    <ItemImage src={item.strDrinkThumb} />
+                    <span>{item.strDrink}</span>
+                  </Link>
+                </Item>
+              ))}
+          </List>
+        </Content>
+      )}
     </Container>
   );
 }
