@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { FaRegArrowAltCircleLeft } from "react-icons/fa";
 import {
@@ -11,6 +11,7 @@ import {
   PropertyTitle,
   DrinkImage,
   BackButton,
+  IngredientsWrapper,
 } from "./styles";
 import { blue } from "../../utils/colors";
 import { useSelector, useDispatch } from "react-redux";
@@ -24,10 +25,26 @@ function Drink() {
   const { loading } = useSelector((state) => state.cocktailsReducer);
   const selectedDrink = useSelector((state) => state.cocktailsReducer.drink);
   let { drink } = useParams();
+  const [ingredients, setIngredients] = useState([]);
 
   useEffect(() => {
     dispatch(select_drink(drink));
+    setIngredients([]);
   }, [dispatch, drink]);
+
+  useEffect(() => {
+    if (selectedDrink) {
+      for (let index = 1; index <= 15; index++) {
+        if (selectedDrink["strIngredient" + index]) {
+          setIngredients((ingredients) => [
+            ...ingredients,
+            selectedDrink["strIngredient" + index],
+          ]);
+        }
+      }
+    }
+  }, [selectedDrink]);
+
   return (
     <Container>
       {loading && <Loading message="Loading drink..." />}
@@ -62,6 +79,14 @@ function Drink() {
               <Property style={{ flexDirection: "column" }}>
                 <PropertyTitle>Instructions:</PropertyTitle>
                 <span>{selectedDrink.strInstructions}</span>
+              </Property>
+              <Property style={{ flexDirection: "column" }}>
+                <PropertyTitle>Ingredients:</PropertyTitle>
+                <IngredientsWrapper>
+                  {ingredients.map((item, i) => (
+                    <span key={i}>{item}</span>
+                  ))}
+                </IngredientsWrapper>
               </Property>
             </Column>
           </DrinkContent>

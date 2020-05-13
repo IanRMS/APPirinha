@@ -99,3 +99,27 @@ export const BackButton = styled.button`
     transform: scale(1.02);
   }
 `;
+
+export const IngredientsWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-top: 5px;
+  user-select: none;
+
+  > span {
+    min-width: 80px;
+    padding: 8px;
+    min-height: 70px;
+    margin: 5px;
+    border-radius: 4px;
+    background: #fafafa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #424242;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+  }
+`;
