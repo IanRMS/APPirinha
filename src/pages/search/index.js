@@ -15,10 +15,13 @@ import {
 } from "./styles";
 import { yellow, gray } from "../../utils/colors";
 import { search_drink } from "../../actions/cocktailsActions";
+import Loading from "../../components/loading";
 
 function Search() {
   const [search, setSearch] = useState("");
-  const { searchList } = useSelector((state) => state.cocktailsReducer);
+  const { searchList, loading } = useSelector(
+    (state) => state.cocktailsReducer
+  );
   const dispatch = useDispatch();
 
   function searchDrink(e) {
@@ -27,6 +30,7 @@ function Search() {
   }
   return (
     <Container>
+      {loading && <Loading message="Loading categories" />}
       <Content>
         <Header>
           <Link to={"/"}>

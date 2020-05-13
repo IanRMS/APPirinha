@@ -6,11 +6,12 @@ import { list_by_category } from "../../actions/cocktailsActions";
 import { Container, Content, Header, Item, ItemImage, List } from "./styles";
 import { FaRegArrowAltCircleLeft } from "react-icons/fa";
 import { lemon } from "../../utils/colors";
+import Loading from "../../components/loading";
 
 function CategoryItens() {
   const dispatch = useDispatch();
   const history = useHistory();
-  const { category, listByCategory } = useSelector(
+  const { category, listByCategory, loading } = useSelector(
     (state) => state.cocktailsReducer
   );
 
@@ -25,6 +26,7 @@ function CategoryItens() {
   }, [dispatch, category]);
   return (
     <Container>
+      {loading && <Loading message="Loading drinks..." />}
       <Content>
         <Header>
           <Link to={"/categories"}>

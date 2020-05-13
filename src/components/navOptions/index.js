@@ -26,10 +26,11 @@ function NavOptions() {
   if (location.pathname !== "/") {
     return (
       <NavContainer>
-        <NavOption onClick={() => history.push("/")}>
+        <NavOption alt="Home" onClick={() => history.push("/")}>
           <FaHome size={24} color={clearBackground} />
         </NavOption>
         <NavOption
+          alt="Categories"
           onClick={() => history.push("/categories")}
           disabled={location.pathname === "/categories"}
         >

@@ -15,10 +15,12 @@ import {
 import { blue } from "../../utils/colors";
 import { useSelector, useDispatch } from "react-redux";
 import { select_drink } from "../../actions/cocktailsActions";
+import Loading from "../../components/loading";
 
 function Drink() {
   const dispatch = useDispatch();
   const history = useHistory();
+  const { loading } = useSelector((state) => state.cocktailsReducer);
   const selectedDrink = useSelector((state) => state.cocktailsReducer.drink);
   let { drink } = useParams();
 
@@ -27,6 +29,7 @@ function Drink() {
   }, [dispatch, drink]);
   return (
     <Container>
+      {loading && <Loading message="Loading drink..." />}
       {selectedDrink && (
         <Content>
           <Header>

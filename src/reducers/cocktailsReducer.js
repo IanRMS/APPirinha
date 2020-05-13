@@ -1,3 +1,5 @@
+import * as types from "../actions/actionTypes";
+
 const initial_state = {
   categories: [],
   category: null,
@@ -6,23 +8,26 @@ const initial_state = {
   drink: {},
   searchList: [],
   randomId: null,
+  loading: false,
 };
 
 export default (state = initial_state, action) => {
   const { type, payload } = action;
   switch (type) {
-    case "LIST_CATEGORIES":
+    case types.LIST_CATEGORIES:
       return { ...state, categories: payload };
-    case "SET_CATEGORY":
+    case types.SET_CATEGORY:
       return { ...state, category: payload };
-    case "LIST_BY_CATEGORY":
+    case types.LIST_BY_CATEGORY:
       return { ...state, listByCategory: payload };
-    case "SELECT_DRINK":
+    case types.SELECT_DRINK:
       return { ...state, drink: payload };
-    case "SEARCH_DRINKS":
+    case types.SEARCH_DRINKS:
       return { ...state, searchList: payload };
-    case "HANDLE_RANDOM":
+    case types.HANDLE_RANDOM:
       return { ...state, randomId: payload };
+    case types.LOADING:
+      return { ...state, loading: payload };
     default:
       return state;
   }

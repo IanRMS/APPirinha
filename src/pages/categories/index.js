@@ -6,15 +6,19 @@ import { get_categories, set_category } from "../../actions/cocktailsActions";
 import { Container, Content, Header } from "./styles";
 import CategoryOption from "./category";
 import { pink } from "../../utils/colors";
+import Loading from "../../components/loading";
 
 function Categories() {
   const dispatch = useDispatch();
-  const { categories } = useSelector((state) => state.cocktailsReducer);
+  const { categories, loading } = useSelector(
+    (state) => state.cocktailsReducer
+  );
   useEffect(() => {
     dispatch(get_categories());
   }, [dispatch]);
   return (
     <Container>
+      {loading && <Loading message="Loading categories" />}
       <Content>
         <Header>
           <Link to={"/"}>
