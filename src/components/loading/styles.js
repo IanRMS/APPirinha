@@ -11,9 +11,11 @@ export const LoadingContainer = styled.div`
   align-items: center;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 1000;
+  flex-direction: column;
 
   > span {
     color: #fafafa;
     font-size: 28px;
+    margin-top: 15px;
   }
 `;
