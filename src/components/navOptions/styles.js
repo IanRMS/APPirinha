@@ -46,7 +46,10 @@ export const NavOption = styled.button`
     overflow: hidden;
     transition: 180ms ease-in-out;
     width: 100px;
+    height: 48px;
     text-align: left;
+    display: flex;
+    align-items: center;
 
     @media (max-width: 768px) {
       left: -105px;
