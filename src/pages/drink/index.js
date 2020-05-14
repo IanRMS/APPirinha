@@ -52,37 +52,37 @@ function Drink() {
         <Loading message="Loading drink..." />
       ) : (
         <>
-          {selectedDrink && (
-            <Content>
-              <Header>
-                <BackButton
-                  onClick={() => {
-                    history.goBack();
-                    dispatch({ type: types.SELECT_DRINK, payload: null });
-                  }}
-                >
-                  <FaRegArrowAltCircleLeft size={30} color={blue} />
-                </BackButton>
-                <span>{selectedDrink.strDrink}</span>
-              </Header>
+          <Content>
+            <Header>
+              <BackButton
+                onClick={() => {
+                  history.goBack();
+                  dispatch({ type: types.SELECT_DRINK, payload: null });
+                }}
+              >
+                <FaRegArrowAltCircleLeft size={30} color={blue} />
+              </BackButton>
+              <span>{selectedDrink?.strDrink}</span>
+            </Header>
+            {selectedDrink && (
               <DrinkContent>
-                <DrinkImage src={selectedDrink.strDrinkThumb} alt="thumb" />
+                <DrinkImage src={selectedDrink?.strDrinkThumb} alt="thumb" />
                 <Column>
                   <Property>
                     <PropertyTitle>Category:</PropertyTitle>
-                    <span>{selectedDrink.strCategory}</span>
+                    <span>{selectedDrink?.strCategory}</span>
                   </Property>
                   <Property>
                     <PropertyTitle>Glass:</PropertyTitle>
-                    <span>{selectedDrink.strGlass}</span>
+                    <span>{selectedDrink?.strGlass}</span>
                   </Property>
                   <Property>
                     <PropertyTitle>Type:</PropertyTitle>
-                    <span>{selectedDrink.strAlcoholic}</span>
+                    <span>{selectedDrink?.strAlcoholic}</span>
                   </Property>
                   <Property style={{ flexDirection: "column" }}>
                     <PropertyTitle>Instructions:</PropertyTitle>
-                    <span>{selectedDrink.strInstructions}</span>
+                    <span>{selectedDrink?.strInstructions}</span>
                   </Property>
                   <Property style={{ flexDirection: "column" }}>
                     <PropertyTitle>Ingredients:</PropertyTitle>
@@ -94,8 +94,8 @@ function Drink() {
                   </Property>
                 </Column>
               </DrinkContent>
-            </Content>
-          )}
+            )}
+          </Content>
         </>
       )}
     </Container>

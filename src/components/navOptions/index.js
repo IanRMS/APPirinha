@@ -28,7 +28,7 @@ function NavOptions() {
       <NavContainer>
         <NavOption alt="Home" onClick={() => history.push("/")}>
           <FaHome size={24} color={clearBackground} />
-          <span>Home</span>
+          <span>Go to home</span>
         </NavOption>
         <NavOption
           alt="Categories"
@@ -41,7 +41,7 @@ function NavOptions() {
               location.pathname === "/categories" ? black : clearBackground
             }
           />
-          <span>Categories</span>
+          <span>List categories</span>
         </NavOption>
         <NavOption
           onClick={() => history.push("/search")}
@@ -51,7 +51,7 @@ function NavOptions() {
             size={24}
             color={location.pathname === "/search" ? black : clearBackground}
           />
-          <span>Search</span>
+          <span>Search a drink</span>
         </NavOption>
         <NavOption onClick={() => handle_random()}>
           <FaGlassMartiniAlt size={24} color={clearBackground} />

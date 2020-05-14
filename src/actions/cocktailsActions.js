@@ -9,6 +9,7 @@ export const get_categories = () => async (dispatch) => {
   try {
     const url = "list.php";
     const { drinks } = await Api.get(url, { params: { c: "list" } });
+    if (!drinks) toast.error("Não foi possível listar as categorias.");
     dispatch({ type: types.LIST_CATEGORIES, payload: drinks });
   } catch (e) {
     toast.error("Não foi possível listar as categorias.");
@@ -28,6 +29,7 @@ export const list_by_category = (category) => async (dispatch) => {
   try {
     const url = `filter.php`;
     const { drinks } = await Api.get(url, { params: { c: category } });
+    if (!drinks) toast.error("Não foi possível listar os drinks");
     dispatch({ type: types.LIST_BY_CATEGORY, payload: drinks });
   } catch (e) {
     toast.error("Não foi possível listar os drinks");
@@ -56,9 +58,11 @@ export const search_drink = (search) => async (dispatch) => {
   try {
     const url = `search.php`;
     const { drinks } = await Api.get(url, { params: { s: search } });
+    if (!drinks)
+      toast.error("Não foi possível realizar a busca, tente novamente");
     dispatch({ type: types.SEARCH_DRINKS, payload: drinks });
   } catch (e) {
-    toast.error("Não foi possível realizar a busca");
+    toast.error("Não foi possível realizar a busca, tente novamente");
   } finally {
     dispatch(loading(false));
   }
@@ -70,6 +74,7 @@ export const random_drink = () => async (dispatch) => {
   try {
     const url = "random.php";
     const { drinks } = await Api.get(url);
+    if (!drinks) toast.error("Não foi possível buscar um drink.");
     dispatch({ type: types.HANDLE_RANDOM, payload: drinks[0].idDrink });
   } catch (e) {
     toast.error("Não foi possível buscar um drink.");

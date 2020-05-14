@@ -45,9 +45,12 @@ export const NavOption = styled.button`
     opacity: 0;
     overflow: hidden;
     transition: 180ms ease-in-out;
+    width: 100px;
+    text-align: left;
 
     @media (max-width: 768px) {
-      display: none;
+      left: -105px;
+      text-align: right;
     }
   }
 

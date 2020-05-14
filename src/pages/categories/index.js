@@ -35,14 +35,15 @@ function Categories() {
             </Link>
             <span>Categories</span>
           </Header>
-          {categories.map((item, i) => (
-            <CategoryOption
-              action={() => dispatch(set_category(item.strCategory))}
-              key={i}
-              title={item.strCategory}
-              nav="/categories/filter-category"
-            />
-          ))}
+          {categories &&
+            categories.map((item, i) => (
+              <CategoryOption
+                action={() => dispatch(set_category(item.strCategory))}
+                key={i}
+                title={item.strCategory}
+                nav="/categories/filter-category"
+              />
+            ))}
         </Content>
       )}
     </Container>
